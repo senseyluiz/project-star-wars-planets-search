@@ -29,13 +29,13 @@
   text-align: center;
 }
 
-.Table tbody tr:nth-child(even) {
+.Table tbody tr:nth-child( even ) {
   background-color: #219ebc;
   color: #001219;
   font-weight: 600;
 }
 
-.Table tbody tr:nth-child(odd) {
+.Table tbody tr:nth-child( odd ) {
   background-color: #dbf2f8;
   font-weight: 600;
 }
