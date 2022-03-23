@@ -1,3 +1,4 @@
+import './Table.css';
 import React, { useContext } from 'react';
 import DataContext from '../context/DataContext';
 
@@ -7,7 +8,7 @@ const Table = () => {
   console.log('DATA: ', data);
 
   return (
-    <table border="1">
+    <table className="Table">
       <thead>
         <tr>
           {

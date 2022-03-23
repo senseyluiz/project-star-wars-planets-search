@@ -1,0 +1,41 @@
+.Table {
+  background-color: #cee5f0;
+  border-collapse: collapse;
+}
+
+.Table td, th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.Table tr {
+  align-items: center;
+  height: 50px;
+  text-align: center;
+}
+
+.Table thead {
+  background-color: #023047;
+  color: #ffb703;
+  margin: 0;
+  text-align: center;
+}
+
+.Table thead tr th {
+  font-size: 18px;
+}
+
+.Table tbody tr {
+  text-align: center;
+}
+
+.Table tbody tr:nth-child(even) {
+  background-color: #219ebc;
+  color: #001219;
+  font-weight: 600;
+}
+
+.Table tbody tr:nth-child(odd) {
+  background-color: #dbf2f8;
+  font-weight: 600;
+}
