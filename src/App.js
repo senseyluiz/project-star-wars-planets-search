@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import Header from './components/Header';
 import Table from './components/Table';
 import DataContext from './context/DataContext';
 
 function App() {
   const [data, setData] = useState([]);
   const [arrKeys, setArrKeys] = useState([]);
+  const [filter, setFilter] = useState({ filterByName: { name: '' } });
+
+  const filterName = ({ target }) => {
+    setFilter((previstate) => ({
+      ...previstate,
+      filterByName: { name: target.value },
+    }));
+  };
 
   const returnApi = async () => {
     const url = 'https://swapi-trybe.herokuapp.com/api/planets/';
@@ -20,7 +29,8 @@ function App() {
   }, []);
 
   return (
-    <DataContext.Provider value={ { data, arrKeys } }>
+    <DataContext.Provider value={ { data, arrKeys, filterName, filter } }>
+      <Header />
       <Table />
     </DataContext.Provider>
   );

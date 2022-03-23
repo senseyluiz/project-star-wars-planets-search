@@ -3,9 +3,9 @@ import React, { useContext } from 'react';
 import DataContext from '../context/DataContext';
 
 const Table = () => {
-  const { arrKeys, data } = useContext(DataContext);
-  console.log('CHAVES: ', arrKeys);
-  console.log('DATA: ', data);
+  const { arrKeys, data, filter: { filterByName: { name } } } = useContext(DataContext);
+  const dataFilter = data.filter((planet) => planet.name.includes(name));
+  console.log(name);
 
   return (
     <table className="Table">
@@ -20,7 +20,7 @@ const Table = () => {
 
       <tbody>
         {
-          data.map((planet, index) => (
+          dataFilter.map((planet, index) => (
             <tr key={ index }>
               <td>
                 {planet.name}
