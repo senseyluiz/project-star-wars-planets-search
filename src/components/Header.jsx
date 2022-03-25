@@ -9,13 +9,23 @@ const Header = () => {
     value: '0',
   });
 
-  const { filterName, setNumFilter } = useContext(DataContext);
+  const {
+    filterName,
+    setNumFilter,
+    filterNumeric: { filterByNumericValues },
+    removeFilter,
+    options,
+    setOptions } = useContext(DataContext);
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
     setKeysFilter({ ...keysFilter, [name]: value });
   };
 
+  const delFilter = (key) => {
+    const remove = document.getElementById(key);
+    remove.remove();
+  };
   return (
     <header>
       {/* <h1> Star Wars</h1> */}
@@ -37,11 +47,14 @@ const Header = () => {
             data-testid="column-filter"
             onChange={ handleChange }
           >
-            <option value="population">population</option>
-            <option value="orbital_period">orbital_period</option>
-            <option value="diameter">diameter</option>
-            <option value="rotation_period">rotation_period</option>
-            <option value="surface_water">surface_water</option>
+            {
+              options.map((option) => (
+                <option key={ option } value={ option }>
+                  {' '}
+                  {option}
+                </option>
+              ))
+            }
           </select>
         </label>
 
@@ -78,7 +91,32 @@ const Header = () => {
           Filtrar
 
         </button>
+
+        <button
+          type="button"
+          data-testid="button-remove-filters"
+          onClick={ removeFilter }
+        >
+          Remover todas filtragens
+        </button>
       </div>
+      {
+        filterByNumericValues.map(({ column, comparison, value }) => (
+          <p key={ column } id={ column }>
+            {' '}
+            {`${column} ${comparison} ${value}`}
+            {' '}
+            <button
+              type="button"
+              data-testid="filter"
+              onClick={ () => delFilter(column) }
+            >
+              X
+            </button>
+            {' '}
+          </p>
+        ))
+      }
     </header>
   );
 };

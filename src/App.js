@@ -11,6 +11,9 @@ function App() {
   const [filterNumeric, setFilterNumeric] = useState({
     filterByNumericValues: [],
   });
+  const [options, setOptions] = useState(
+    ['population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water'],
+  );
 
   const setNumFilter = (filtro) => {
     setFilterNumeric((previstate) => ({
@@ -20,7 +23,11 @@ function App() {
       ],
     }));
   };
-
+  const removeFilter = () => {
+    setFilterNumeric(() => ({
+      filterByNumericValues: [],
+    }));
+  };
   const filterName = ({ target }) => {
     setFilter((previstate) => ({
       ...previstate,
@@ -49,6 +56,9 @@ function App() {
         filter,
         filterNumeric,
         setNumFilter,
+        removeFilter,
+        options,
+        setOptions,
       } }
     >
       <Header />
