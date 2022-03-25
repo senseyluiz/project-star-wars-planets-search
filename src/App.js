@@ -8,6 +8,18 @@ function App() {
   const [data, setData] = useState([]);
   const [arrKeys, setArrKeys] = useState([]);
   const [filter, setFilter] = useState({ filterByName: { name: '' } });
+  const [filterNumeric, setFilterNumeric] = useState({
+    filterByNumericValues: [],
+  });
+
+  const setNumFilter = (filtro) => {
+    setFilterNumeric((previstate) => ({
+      ...previstate,
+      filterByNumericValues: [...previstate.filterByNumericValues,
+        filtro,
+      ],
+    }));
+  };
 
   const filterName = ({ target }) => {
     setFilter((previstate) => ({
@@ -29,7 +41,19 @@ function App() {
   }, []);
 
   return (
-    <DataContext.Provider value={ { data, arrKeys, filterName, filter } }>
+    <DataContext.Provider
+      value={ {
+        data,
+        arrKeys,
+        filterName,
+        filter,
+
+        filterNumeric,
+
+        setNumFilter,
+
+      } }
+    >
       <Header />
       <Table />
     </DataContext.Provider>

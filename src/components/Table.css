@@ -1,6 +1,5 @@
 .Table {
-  background-color: #cee5f0;
-  border-collapse: collapse;
+  border-collapse: collapse; 
 }
 
 .Table td, th {
@@ -30,12 +29,12 @@
 }
 
 .Table tbody tr:nth-child( even ) {
-  background-color: #219ebc;
+  background-color: #219ebc90;
   color: #001219;
   font-weight: 600;
 }
 
 .Table tbody tr:nth-child( odd ) {
-  background-color: #dbf2f8;
+  background-color: #dbf2f890;
   font-weight: 600;
 }

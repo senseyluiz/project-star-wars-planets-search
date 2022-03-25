@@ -1,6 +1,20 @@
 header {
+  color: #e4f8fc;
+  font-size: 20px;
+  font-weight: 600;
+  height: 400px;
   margin-bottom: 10px;
   text-align: center;
+}
+
+header img {
+  margin: auto;
+  width: 400px;
+  display: block;
+}
+
+header h1 {
+  font-size: 80px;
 }
 
 header .filterText {
@@ -9,4 +23,36 @@ header .filterText {
   height: 30px;
   padding-left: 10px;
   width: 300px;
+}
+
+header .filtros {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+header .filtros input, select {
+  background-color: #e4f8fc;
+  border-radius: 8px;
+  font-size: 18px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+#filterNumber {
+  width: 70px;
+}
+
+header .btnFilter {
+  background-color: #fb8500;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+header .btnFilter:hover {
+  background-color: #ffb703;
+  color: #000
 }
