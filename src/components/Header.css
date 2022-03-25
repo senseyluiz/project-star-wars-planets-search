@@ -8,9 +8,9 @@ header {
 }
 
 header img {
+  display: block;
   margin: auto;
   width: 400px;
-  display: block;
 }
 
 header h1 {
@@ -46,7 +46,7 @@ header .filtros input, select {
 header .btnFilter {
   background-color: #fb8500;
   border-radius: 8px;
-  color: #fff;
+  color: white;
   font-size: 18px;
   font-weight: 600;
   transition: 0.3s;
@@ -54,5 +54,5 @@ header .btnFilter {
 
 header .btnFilter:hover {
   background-color: #ffb703;
-  color: #000
+  color: black;
 }

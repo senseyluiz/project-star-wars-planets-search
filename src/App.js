@@ -47,11 +47,8 @@ function App() {
         arrKeys,
         filterName,
         filter,
-
         filterNumeric,
-
         setNumFilter,
-
       } }
     >
       <Header />

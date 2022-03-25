@@ -10,7 +10,7 @@ const Table = () => {
     filterNumeric: { filterByNumericValues } } = useContext(DataContext);
 
   const [elFilters, setElFilters] = useState([]);
-
+  // implementaão com ajuda de: Alessandro, Luana e Wolf
   useEffect(() => {
     let dataFilter = data.filter((planet) => planet.name.includes(name));
     filterByNumericValues.forEach(({ column, value, comparison }) => {
