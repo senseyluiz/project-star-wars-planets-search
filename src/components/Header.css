@@ -62,8 +62,6 @@ header .selectFilter {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
-  
-  
 }
 
 header .selectFilter p {
@@ -79,5 +77,4 @@ header .selectFilter button {
   font-size: 14px;
   font-weight: 600;
   margin-left: 10px;
-  
 }
