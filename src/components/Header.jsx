@@ -117,22 +117,26 @@ const Header = () => {
           Remover todas filtragens
         </button>
       </div>
-      {
-        filterByNumericValues.map(({ column, comparison, value }) => (
-          <p data-testid="filter" key={ column } id={ column }>
-            {' '}
-            {`${column} ${comparison} ${value}`}
-            {' '}
-            <button
-              type="button"
-              onClick={ () => delFilter(column) }
-            >
-              X
-            </button>
-            {' '}
-          </p>
-        ))
-      }
+      <div className="selectFilter">
+        {
+
+          filterByNumericValues.map(({ column, comparison, value }) => (
+
+            <p data-testid="filter" key={ column } id={ column }>
+              {' '}
+              {`${column} ${comparison} ${value}`}
+              {' '}
+              <button
+                type="button"
+                onClick={ () => delFilter(column) }
+              >
+                X
+              </button>
+              {' '}
+            </p>
+          ))
+        }
+      </div>
     </header>
   );
 };

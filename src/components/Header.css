@@ -55,3 +55,29 @@ header .btnFilter:hover {
   background-color: #ffb703;
   color: black;
 }
+
+header .selectFilter {
+  align-items: flex-start;
+  background-color: #8ecae640;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  
+  
+}
+
+header .selectFilter p {
+  align-items: center;
+  color: white;
+  display: flex;
+}
+
+header .selectFilter button {
+  background-color: red;
+  border-radius: 25px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 10px;
+  
+}
