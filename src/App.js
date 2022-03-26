@@ -15,6 +15,7 @@ function App() {
     ['population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water'],
   );
 
+  // Função que adiciona filtro no filterNumeric
   const setNumFilter = (filtro) => {
     setFilterNumeric((previstate) => ({
       ...previstate,
@@ -22,12 +23,18 @@ function App() {
         filtro,
       ],
     }));
+    const teste = options.filter((option) => option !== filtro.column);
+    setOptions(teste);
   };
+
+  // Função que remove todos os filtros
   const removeFilter = () => {
     setFilterNumeric(() => ({
       filterByNumericValues: [],
     }));
   };
+
+  // Função que filtra pela digitação
   const filterName = ({ target }) => {
     setFilter((previstate) => ({
       ...previstate,
@@ -59,6 +66,7 @@ function App() {
         removeFilter,
         options,
         setOptions,
+        setFilterNumeric,
       } }
     >
       <Header />

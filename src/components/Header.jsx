@@ -15,7 +15,8 @@ const Header = () => {
     filterNumeric: { filterByNumericValues },
     removeFilter,
     options,
-    setOptions } = useContext(DataContext);
+    setOptions,
+    setFilterNumeric } = useContext(DataContext);
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -23,8 +24,24 @@ const Header = () => {
   };
 
   const delFilter = (key) => {
-    const remove = document.getElementById(key);
-    remove.remove();
+    console.log(key);
+    filterByNumericValues.forEach((element) => {
+      if (element.column === key) {
+        setFilterNumeric((prevstate) => ({
+          ...prevstate,
+          filterByNumericValues: [...prevstate.filterByNumericValues.filter(({ column }) => column !== key)],
+        }));
+      }
+    });
+  };
+
+  const handleClick = (flterColumn) => {
+    setNumFilter(flterColumn);
+    setKeysFilter((prevstate) => ({
+      ...prevstate,
+      column: prevstate.colum,
+    }));
+    console.log('TESTE', options);
   };
   return (
     <header>
@@ -50,7 +67,6 @@ const Header = () => {
             {
               options.map((option) => (
                 <option key={ option } value={ option }>
-                  {' '}
                   {option}
                 </option>
               ))
@@ -86,7 +102,7 @@ const Header = () => {
           type="button"
           className="btnFilter"
           data-testid="button-filter"
-          onClick={ () => setNumFilter(keysFilter) }
+          onClick={ () => handleClick(keysFilter) }
         >
           Filtrar
 
