@@ -24,16 +24,16 @@ const Header = () => {
   };
 
   const delFilter = (key) => {
-    console.log(key);
-    filterByNumericValues.forEach((element) => {
-      if (element.column === key) {
-        setFilterNumeric((prevstate) => ({
-          ...prevstate,
-          filterByNumericValues: [...prevstate.filterByNumericValues.filter(({ column }) => column !== key)],
-        }));
-      }
-    });
+    // console.log(key);
+    // filterByNumericValues.forEach((element) => {
+    //   if (element.column === key) {
+    setFilterNumeric((prevstate) => ({
+      ...prevstate,
+      filterByNumericValues: [...filterByNumericValues.filter(({ column }) => column !== key)],
+    }));
+    // }
   };
+  // };
 
   const handleClick = (flterColumn) => {
     setNumFilter(flterColumn);
@@ -118,13 +118,12 @@ const Header = () => {
       </div>
       {
         filterByNumericValues.map(({ column, comparison, value }) => (
-          <p key={ column } id={ column }>
+          <p data-testid="filter" key={ column } id={ column }>
             {' '}
             {`${column} ${comparison} ${value}`}
             {' '}
             <button
               type="button"
-              data-testid="filter"
               onClick={ () => delFilter(column) }
             >
               X
