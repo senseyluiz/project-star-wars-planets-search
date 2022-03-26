@@ -15,7 +15,7 @@ const Header = () => {
     filterNumeric: { filterByNumericValues },
     removeFilter,
     options,
-    setOptions,
+
     setFilterNumeric } = useContext(DataContext);
 
   const handleChange = ({ target }) => {
@@ -29,7 +29,8 @@ const Header = () => {
     //   if (element.column === key) {
     setFilterNumeric((prevstate) => ({
       ...prevstate,
-      filterByNumericValues: [...filterByNumericValues.filter(({ column }) => column !== key)],
+      filterByNumericValues: [...filterByNumericValues
+        .filter(({ column }) => column !== key)],
     }));
     // }
   };
